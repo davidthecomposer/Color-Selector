@@ -32,7 +32,6 @@ const headings = document.querySelectorAll('th');
 const tBody = document.querySelector('tbody');
 const sliderThumbs = document.querySelectorAll('#thumb');
 
-console.log(sliderThumbs)
 
 
 const fillGradient = () => {
@@ -366,11 +365,11 @@ const mouseDown = (e) => {
 };
 
 const mouseMove = (e) => {
-    console.log(e.offsetX);
+    
     if (e.offsetY > 180 || e.offsetX > 400) {
-        e.target.style.cursor = 'url(pointer.png) 16 16, auto';
+        e.target.style.cursor = 'url(images/pointer.png) 16 16, auto';
     } else {
-        e.target.style.cursor = 'url(pointer1.png) 16 16, auto';
+        e.target.style.cursor = 'url(images/pointer1.png) 16 16, auto';
     }
 
     if (drag) {

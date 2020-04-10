@@ -1,99 +1,19 @@
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-  
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,
+code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,
+form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,
+footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
 }
 
-
 body {
-  display: flex;
   background-color: rgb(245, 245, 245);
   font-family: 'Slabo 27px', serif;
-  
+  min-width: 800px;
 }
 
 em {
@@ -102,32 +22,22 @@ em {
   /* text-decoration-line: underline; */
 }
 
-.signature {
-  height: 3rem;
-  
-}
-.by-me {
-  position: absolute;
-  display: flex;
-  margin-left: 90%;
-  margin-top: .3%;
-  
-}
-
-.by-me p {
-  padding-right: 1rem;
-  align-self: center;
-  color: white;
-  font-family: 'Slabo 27px', serif;
-}
 .big-container {
+  width: 80%;
+  min-width: 800px;
+  margin: 20px auto;
   display: flex;
   flex-direction: column;
+  outline: 4px #303030 solid;
+
 }
+
 .content {
   display: flex;
   flex-direction: row;
+
 }
+
 .container {
   margin: .5% 1% 0% 1%;
   width: 750px;
@@ -137,31 +47,45 @@ em {
   grid-template-rows: repeat(31, auto);
   grid-template-columns: repeat(21, auto);
   background-color: rgb(240, 240, 240);
-  padding: 1rem 1rem 0rem 1rem;
- 
+  padding: 1rem 1rem 0rem 1rem; 
 }
 
+/* ------------------------ Header ------------------------------- */
+.header {
+  position: relative;
+  display: flex;
+  width: 100%;
+  background-color: #303030;
+}
 
-h1 {
-  grid-area: 1 / 1 / 2 / 21;
+.title {
   font-size: 3rem;
   text-align: center;
   margin: 0% auto 0%;
-  width: 100%;
-  background-color: #303030;
   color: white;
-
 }
 
-h2 {
-  margin: 2% 0 0 0;
+.by-me {
+  position: absolute;
+  display: flex;
+  right: 2%;
+  top: 6px;
 }
+
+.by-me p {
+  padding: 0 .75rem;
+  align-self: center;
+  color: white;
+  font-family: 'Slabo 27px', serif;
+}
+.signature {
+  height: 3rem;
+}
+
+
 .preview {
   grid-area: 2 / 1 / 11 / 7;
-
   height: 290px;
-
-
 }
 
 button {
@@ -170,8 +94,7 @@ button {
 
 #canvas {
   grid-area: 2 / 7 / 11 / 21;
-  cursor: url(pointer1.png) 16 16, auto;
-  /* background: linear-gradient(to bottom, transparent 0%, #000 100%); */
+  cursor: url(images/pointer1.png) 16 16, auto;
   width: 580px;
   margin: 0 0 0 7px;
   padding: 0;
@@ -322,8 +245,8 @@ button {
 
 .random {
   grid-area: 24 / 11 / 27 / 12;
-  background-color: rgb(38, 0, 255);
-  box-shadow: 1px 2px 2px #080808, 0px 2px 2px #696666;
+  background-color: rgb(7, 0, 46);
+  
   display: flex;
   cursor: pointer;
 }
@@ -538,7 +461,9 @@ button {
   
 }
 
-
+.instructions {
+  margin: 2% 0 0 0;
+}
 .swatch-container {
   display: flex;
   flex-wrap: wrap;
@@ -647,4 +572,23 @@ tr:nth-child(odd) {
   color: black;
 }
 
-.output-table {}
+
+
+
+@media (max-width: 1600px) {
+  .content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .header {
+    width: 100%;
+  }
+}
+
+@media (max-width: 960px) {
+  .big-container {
+    width: 96%;
+  }
+}
+
